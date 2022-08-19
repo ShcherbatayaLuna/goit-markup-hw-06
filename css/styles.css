@@ -292,15 +292,7 @@ body {
   position: relative;
   margin-bottom: 10px;
 }
-.modal-list:hover .modal-input,
-.modal-list:focus .modal-input {
-  border: 1px solid var(--accent-color);
-}
-.modal-list:hover .modal-icon,
-.modal-list:focus .modal-icon {
-  fill: var(--accent-color);
-}
-.modal-label {
+.modal .modal-label {
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
@@ -308,10 +300,13 @@ body {
 
   color: var(--primary-text-color);
 }
+.input-icon {
+  position: relative;
+}
 .modal-input {
   width: 100%;
   height: 40px;
-  padding: 11px 12px 11px 30px;
+  padding: 11px 12px 11px 45px;
 
   margin-top: 4px;
 
@@ -320,12 +315,27 @@ body {
 
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.modal-list:hover .modal-input,
+.modal-list:focus .modal-input {
+  border: 1px solid var(--accent-color);
+}
 .modal-icon {
   position: absolute;
+  /* top: 50%;
+  left: 12px; */
   top: 50%;
-  left: 12px;
+  right: 93%;
+  transform: translate(50%, -50%);
 
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-list:hover .modal-icon,
+.modal-list:focus .modal-icon {
+  fill: var(--accent-color);
+}
+.modal-input:focus + .modal-icon,
+.modal-input:hover + .modal-icon {
+  fill: var(--accent-color);
 }
 .modal-feedback {
   margin-bottom: 20px;
@@ -356,6 +366,7 @@ body {
   box-sizing: content-box;
   /* position: absolute; */
   margin: 0;
+  margin-left: 12px;
   margin-right: 7px;
   border: 1px solid var(--title-text-color);
   border-radius: 2px;
